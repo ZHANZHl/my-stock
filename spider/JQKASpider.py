@@ -40,7 +40,7 @@ def auto_adjust_position(convert_to_datetime, target_date_time=datetime.datetime
         drag_actions.perform()
         start_date_time = convert_to_datetime(date_or_time_element.text)
     # 2. 二分查找目标日期
-    left_position, right_position = 0, 565
+    left_position, right_position = 0, 564
     while left_position < right_position:
         mid_position = (left_position + right_position) // 2
         ActionChains(driver).move_to_element_with_offset(canvas_element, mid_position,

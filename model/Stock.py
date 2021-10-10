@@ -1,4 +1,4 @@
-from .Industry import *
+from model.Industry import Industry, EnergySecondaryIndustry
 
 
 class Stock:
@@ -53,6 +53,10 @@ class Stock:
                "\n最低:" + self.lowest_price_last_day
 
     def to_json(self):
+        """
+        目前没找到序列化枚举值的好办法,所以忽略掉行业相关的序列化
+        :return:
+        """
         return {
             "identity": self.identity,
             "current_price": self.current_price,
@@ -77,8 +81,8 @@ class Stock:
             "circulation_market_value": self.circulation_market_value,
             "trade_equity": self.trade_equity,
             "dividend_yield": self.dividend_yield,
-            "industry": self.industry,
-            "second_industry": self.second_industry,
+            # "industry": self.industry,
+            # "second_industry": self.second_industry,
         }
 
     @staticmethod
@@ -106,5 +110,6 @@ class Stock:
                      stock["circulation_market_value"],
                      stock["trade_equity"],
                      stock["dividend_yield"],
-                     stock["industry"],
-                     stock["second_industry"])
+                     # stock["industry"],
+                     # stock["second_industry"]
+                     )
