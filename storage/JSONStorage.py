@@ -4,7 +4,7 @@ import json
 from model.Stock import Stock
 from model.DayStock import DayStock
 from storage.BaseStorage import BaseStorage
-from spider.JQKASpider import JQKASpider
+from spider.sotckSpider.JQKA.JQKASpider import JQKASpider
 
 
 class JSONStorage(BaseStorage):
